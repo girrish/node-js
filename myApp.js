@@ -13,11 +13,16 @@ console.log("Hello World");
   res.send("Response String");
 });*/
 
-app.get("/", (req,res) => {
+/** app.get("/", (req,res) => {
   res.send("Hello Express");
-})
+})*/
 
 /** 3) Serve an HTML file */
+console.log(__dirname);
+var absolutePath = __dirname + "/views/index.html";
+app.get("/", (req,res)=>{
+  res.sendFile(absolutePath);
+})
 
 /** 4) Serve static assets  */
 
